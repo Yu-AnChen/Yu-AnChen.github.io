@@ -1,0 +1,119 @@
+<div class="container-fluid px-0" [ngClass]="{landing: !category, code: category=='code', research: category=='research'}">
+<div class="container-fluid main-content-contaier" *ngIf="data" [ngClass]="{landing: !category, code: category=='code', research: category=='research'}">
+  <div class="row">
+    <div class="jumbotron col-12">
+      <h1 class="display-1 title-position">
+        <span [routerLink]="['/']" class="cursor-pointer">YU-AN <br />CHEN<br /></span>
+        <span class="h5" *ngFor="let element of nav; let last = last" (click)="changeCategory(element)">
+          <a [routerLink]="['/' + element]" class="px-2 opacity-3" [ngClass]="{active: category == element, 'landing-link': !category}">{{element}}</a>
+          <span *ngIf="!last" class="px-1"> / </span>
+        </span>
+      </h1>
+      <img *ngIf="category" [src]="'assets/img/bullet_'+category+'.png'" class="">
+    </div>
+  </div>
+
+  <section *ngIf="category">
+  <div *ngFor="let job of data[category].jobs; let I = index; let first = first">
+    <div class="row pl-5">
+      <!--<div class="col-12" *ngIf="!first">
+        <hr>
+      </div>-->
+      <div class="col-12 text-left mt-5 h4 lh-3  mb-0 pl-5 border-left-solid"
+        [ngClass]="job.skills ? 'pb-2' : 'pb-4'">
+        <img [src]="'assets/img/bullet_'+category+'.png'" class="bullet-img">
+        <div class="h6 mb-0">{{job.duration[0] | date:'MMM y'}} - {{job.duration[1] | date:'MMM y'}}</div>
+        <span [innerHTML]="job.title"></span>
+      </div>
+      <!--<h6 class="col-2 text-right">
+        <small>{{job.duration[0] | date:'MMM y'}} - {{job.duration[1] | date:'MMM y'}}</small>
+      </h6>-->
+      <p class="col-12 border-left-solid pl-5 mb-0 pb-2" *ngIf="job.skills">
+        <span *ngFor="let skill of job.skills; let last = last">
+          {{skill}} <span *ngIf="!last">|</span>
+        </span>
+      </p>
+    </div>
+    <div *ngFor="let project of job.projects; let i = index" class="row" >
+
+
+      <div class="col-12 bg-img pl-5" [ngStyle]="{'background-image': 'url(' + getImgUrl(project.projectImg) + ')'}">
+        <div class="col-12 text-on-bg-img d-flex flex-column justify-content-start pt-3 pl-5">
+          <span *ngIf="!project.details.length && !project.demoLink">
+            <h2 class="h4">{{project.projectNameShort || project.projectName}}</h2>
+          </span>
+          <span *ngIf="project.details.length">
+            <h2 class="h4 cursor-pointer" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]">
+              {{project.projectNameShort || project.projectName}}
+                <span *ngIf="showDetail['number'+I+'-'+i]">
+                  <svg class="icon icon-expand_more">
+                    <use xlink:href="#icon-expand_more"></use>
+                  </svg>
+                </span>
+                <span *ngIf="!showDetail['number'+I+'-'+i]">
+                  <svg class="icon icon-expand_less">
+                    <use xlink:href="#icon-expand_less"></use>
+                  </svg>
+                </span>
+            </h2>
+          </span>
+          <span *ngIf="project.demoLink">
+            <a [href]="project.demoLink" target="_blank">
+              <h2 class="h4 cursor-pointer" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]">
+                {{project.projectNameShort || project.projectName}}
+                <svg class="icon icon-open_in_new">
+                  <use xlink:href="#icon-open_in_new"></use>
+                </svg>
+              </h2>
+            </a>
+          </span>
+          <p [ngClass]="{'cursor-pointer': project.details.length}" [innerHTML]="project.projectDescription" 
+            (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]"></p>
+          <ul *ngIf="showDetail['number'+I+'-'+i]">
+            <li *ngFor="let detail of project.details">{{detail}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 pl-5">
+        <div class="col-12 text-on-bg-img d-flex flex-column justify-content-start pt-3 pl-5">
+          <!--<img src="assets/img/bullet_dark.png" class="bullet-img">-->
+          <span *ngIf="!project.details.length && !project.demoLink">
+            <h2 class="h4">{{project.projectNameShort || project.projectName}}</h2>
+          </span>
+          <span *ngIf="project.details.length">
+            <h2 class="h4 cursor-pointer" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]">
+              {{project.projectNameShort || project.projectName}}
+                <span *ngIf="showDetail['number'+I+'-'+i]">
+                  <svg class="icon icon-expand_more">
+                    <use xlink:href="#icon-expand_more"></use>
+                  </svg>
+                </span>
+                <span *ngIf="!showDetail['number'+I+'-'+i]">
+                  <svg class="icon icon-expand_less">
+                    <use xlink:href="#icon-expand_less"></use>
+                  </svg>
+                </span>
+            </h2>
+          </span>
+          <span *ngIf="project.demoLink">
+            <a [href]="project.demoLink" target="_blank">
+              <h2 class="h4 cursor-pointer" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]">
+                {{project.projectNameShort || project.projectName}}
+                <svg class="icon icon-open_in_new">
+                  <use xlink:href="#icon-open_in_new"></use>
+                </svg>
+              </h2>
+            </a>
+          </span>
+          <p [ngClass]="{'cursor-pointer': project.details.length}" [innerHTML]="project.projectDescription" 
+            (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]"></p>
+          <ul *ngIf="showDetail['number'+I+'-'+i]">
+            <li *ngFor="let detail of project.details">{{detail}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</div>
+</div>
