@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
 .landing {
   min-height: 100vh;
   background: no-repeat center center;
-  background-image: url('assets/img/bg-img.jpg');
+  background-image: url('../../assets/img/bg-img.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
