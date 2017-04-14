@@ -85,26 +85,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
   background-color: initial;
 }
 
-a { color: inherit; }
-a.opacity-3 { opacity: 0.3; }
-a.landing-link { color: black; opacity: 1; }
-a:hover, a:focus, a.active { color: inherit; opacity: 1; text-decoration: initial; }
-/*a:link { color: inherit; }
-a:visited { color: inherit; }
-a:hover { color: inherit; border: solid 1px; text-decoration: initial; padding: 0.2em inherit; }
-a:active { color: inherit; }*/
-
-/*a:hover::after, a:active::after, a:focus::after {
-  content: '*';
-}*/
-.icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-}
 .icon-expand_more {
   position: relative;
   top: 0.25em;
@@ -113,7 +93,20 @@ a:active { color: inherit; }*/
   width: 0.7em;
   height: 1.2em;
 }
-.cursor-pointer { cursor: pointer; }
+
 .main-content-contaier {
   max-width: 1024px;
+}
+
+.contact-icons {
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width: 95%;
+  max-width: 1024px;
+  margin-left: -15px
+}
+.contact-icons svg {
+  width: 2em;
+  height: 2em;
 }
