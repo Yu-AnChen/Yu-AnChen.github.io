@@ -42,14 +42,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
   border-left: solid 4px;
 }
 .title-position {
-  left: 240px;
-  top: 130px;
+  left: 200px;
+  top: 70px;
   width: 200px;
+  position: relative;
+  z-index: 2;
+}
+.title-img-position {
   position: absolute;
+  top: 4em;
 }
 @media (max-width: 500px) {
   .title-position {
-    left: 1em;
+    left: 0.7em;
   }
   .jumbotron {
     min-height: 100vh;
@@ -61,7 +66,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
 }
 @media (max-width: 350px) {
   .title-position {
-    left: 0.4em;
+    left: 0.2em;
   }
   .pl-5 {
     padding-left: 1em!important;

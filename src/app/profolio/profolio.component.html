@@ -1,15 +1,15 @@
 <div class="container-fluid px-0" [ngClass]="{landing: !category, code: category=='code', research: category=='research'}">
 <div class="container-fluid main-content-contaier" *ngIf="data" [ngClass]="{landing: !category, code: category=='code', research: category=='research'}">
   <div class="row">
-    <div class="jumbotron col-12">
-      <h1 class="display-1 title-position">
+    <div class="jumbotron col-12 mb-0">
+      <h1 class="display-1 title-position pb-5 mb-0">
         <span [routerLink]="['/']" class="cursor-pointer">YU-AN <br />CHEN<br /></span>
         <span class="h5" *ngFor="let element of nav; let last = last" (click)="changeCategory(element)">
           <a [routerLink]="['/' + element]" class="px-2 opacity-3" [ngClass]="{active: category == element, 'landing-link': !category}">{{element}}</a>
           <span *ngIf="!last" class="px-1"> / </span>
         </span>
       </h1>
-      <img *ngIf="category" [src]="'assets/img/bullet_'+category+'.png'" class="">
+      <img *ngIf="category" [src]="'assets/img/bullet_'+category+'.png'" class="title-img-position">
     </div>
   </div>
 
