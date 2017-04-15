@@ -1,21 +1,27 @@
 <div class="container-fluid px-0" [ngClass]="{landing: !category, code: category=='code', research: category=='research'}">
   <div class="container-fluid main-content-contaier" *ngIf="data" [ngClass]="{landing: !category, code: category=='code', research: category=='research'}">
     <div class="contact-icons text-right">
-      <a href="https://github.com/yu-anchen" class="d-block">
-        <svg class="icon py-1">
+      <div>
+      <a href="https://github.com/yu-anchen" class="pl-5">
+        <svg class="icon px-1">
           <use xlink:href="#icon-github"></use>
         </svg>
       </a>
-      <a href="mailto:atwood12@gmail.com" class="d-block">
+      </div>
+      <div>
+      <a href="mailto:atwood12@gmail.com" class="pl-5">
         <svg class="icon px-1">
           <use xlink:href="#icon-mail_outline"></use>
         </svg>
       </a>
-      <a href="https://www.linkedin.com/in/yuanchenbio" class="d-block">
+      </div>
+      <div>
+      <a href="https://www.linkedin.com/in/yuanchenbio" class="pl-5">
         <svg class="icon px-1">
           <use xlink:href="#icon-linkedin-square"></use>
         </svg>
       </a>
+      </div>
     </div>
     <div class="row">
       <div class="jumbotron col-12 mb-0">

@@ -17,9 +17,6 @@ export class ProfolioComponent {
 
   constructor(route: Router) {
     this.route = route;
-    console.log(route.routerState);
-    console.log(route);
-    console.log(route.url.split('/')[1]);
   }
 
   ngOnInit() {

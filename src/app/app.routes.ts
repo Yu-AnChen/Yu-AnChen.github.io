@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 
 // Route Configuration
 export const routes: Routes = [
-  { path: '', component: ProfolioComponent},
   { path: 'code', component: ProfolioComponent },
-  { path: 'research', component: ProfolioComponent }
+  { path: 'research', component: ProfolioComponent },
+  { path: '', component: ProfolioComponent },
+  { path: '**', component: ProfolioComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
