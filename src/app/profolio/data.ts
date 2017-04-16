@@ -4,7 +4,7 @@ const dataRaw = [
         summary: 'A dedicated, goal-oriented biomedical engineer with a background in nanomaterial engineering and molecular biology. Expertise in DNA-templated silver nanoclusters probe design, synthesis and application. Extensive experience in gene cloning, transcript expression analysis, recombinant protein expression, purification, and characterization through mutational analysis and functional assays. Excellent problem solving, communication, and multi-tasking skills.',
         jobs: [
             {
-                duration: [new Date('Feb 2014'), new Date(Date.now())],
+                duration: [new Date('2014-02'), new Date(Date.now())],
                 title: 'Visiting Scholar, University of Texas at Austin, Dr. Tim Yeh’s lab',
                 projects: [
                     {
@@ -59,7 +59,7 @@ const dataRaw = [
                 ]
             },
             {
-                duration: [new Date('Sep 2009'), new Date('May 2012')],
+                duration: [new Date('2009-09'), new Date('2012-05')],
                 title: 'Graduate Research Assistant, National Taiwan University, Dr. Hsu-Liang Hsieh’s Lab',
                 projects: [
                     {
@@ -91,7 +91,7 @@ const dataRaw = [
                 ]
             },
             {
-                duration: [new Date('Jan 2009'), new Date('Jun 2009')],
+                duration: [new Date('2009-01'), new Date('2009-06')],
                 title: 'Undergraduate Research Assistant, National Taiwan University, Dr. Hsu-Liang Hsieh’s Lab',
                 projects: [
                     {
@@ -111,7 +111,7 @@ const dataRaw = [
         category: 'code',
         jobs: [
             {
-                duration: [new Date('Dec 2015'), new Date()], 
+                duration: [new Date('2015-12'), new Date()], 
                 title: 'Freelance Web Developer',
                 skills: ['Javascript', 'MongoDB', 'Express', 'Angular', 'NodeJS', 'Version control', 'Heroku'],
                 projects: [
@@ -147,7 +147,7 @@ const dataRaw = [
                 ],
             },
             {
-                duration: [new Date('Feb 2014'), new Date('Dec 2015')], 
+                duration: [new Date('2014-02'), new Date('2015-12')], 
                 title: 'TTBA Web Admin', 
                 skills: ['HTML', 'CSS', 'Google Sites', 'Google Analytics', 'Email Campaign', 'Facebook Campaign'],
                 projects: [
