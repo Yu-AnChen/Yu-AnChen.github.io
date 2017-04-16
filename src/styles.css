@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-a { color: inherit; }
+a { color: inherit; background-color: darksalmon; }
 a.opacity-3 { opacity: 0.3; }
 a.landing-link { color: black; opacity: 1; }
 a:hover, a:focus, a.active { color: inherit; opacity: 1; text-decoration: initial; }

@@ -12,7 +12,8 @@ export class ProfolioComponent {
   data: any = dataArr;
   showDetail = {};
   category: String;
-  nav: Array<String> = [ 'research', 'code'/*, 'baking'*/];
+  nav: Array<String> = [ 'code', 'research'/*, 'baking'*/];
+  navText: Array<String> = ['web development', 'biomedical research']
   route: any;
 
   constructor(route: Router) {
@@ -22,13 +23,20 @@ export class ProfolioComponent {
   ngOnInit() {
     this.category = this.route.url.split('/')[1];
   }
+  getNavText(nav) {
+    if (this.nav.indexOf(nav) < 0) {
+      return 'not found';
+    }
+    return this.navText[this.nav.indexOf(nav)];
+
+  }
   changeCategory(str) {
     if (!str) { return; }
     return this.category = str;
   }
-
   getImgUrl(str) {
     if (!str) { return; }
     return `assets/img/${str}`;
   }
+
 }

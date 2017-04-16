@@ -7,12 +7,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
 .lh-3 {
   line-height: 150%;
 }
-.container-fluid.research, .container-fluid.research .jumbotron {
+.container-fluid.research {
   background-color: #EBEBEB;
   color: #1A1A1A;
   min-height: 100vh;
 }
-.container-fluid.code, .container-fluid.code .jumbotron {
+.container-fluid.code {
   background-color: #222222;
   color: #E6E6E6;
   min-height: 100vh;
@@ -41,36 +41,51 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
 .border-left-solid {
   border-left: solid 4px;
 }
+.min-height-100vh{
+  min-height: 100vh;
+}
 .title-position {
-  left: 200px;
-  top: 70px;
-  width: 200px;
+  padding-left: 200px;
+  padding-top: 70px;
+  position: relative;
+  z-index: 2;
+}
+.nav-position {
+  padding-left: 200px;
+  padding-bottom: 70px;
   position: relative;
   z-index: 2;
 }
 .title-img-position {
   position: absolute;
-  top: 4em;
+}
+@media (max-width: 620px) {
+  .nav-position > span {
+    display: block;
+  }
 }
 @media (max-width: 500px) {
   .title-position {
-    left: 0.7em;
+    padding-left: 0.7em;
   }
-  .jumbotron {
-    min-height: 100vh;
-    overflow: hidden;
-  }
-  .text-on-bg-img, .bg-img {
-    min-height: 400px;
+  .nav-position {
+    padding-left: 4em;
   }
 }
 @media (max-width: 350px) {
   .title-position {
-    left: 0.2em;
+    padding-left: 0.2em;
+    max-width: 300px;
   }
   .pl-5 {
     padding-left: 1em!important;
   }
+  .nav-position {
+    padding-left: 1em;
+  }
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .landing {
   min-height: 100vh;
@@ -80,9 +95,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-.landing .jumbotron {
-  background-color: initial;
 }
 
 .icon-expand_more {
@@ -96,17 +108,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h5, .h6, a.h4 {
 
 .main-content-contaier {
   max-width: 1024px;
+  overflow: hidden;
 }
-
-.contact-icons {
-  position: fixed;
-  top: 0px;
-  z-index: 100;
-  width: 95%;
-  max-width: 1024px;
-  margin-left: -15px
-}
-.contact-icons svg {
-  width: 2em;
-  height: 2em;
+.float-left {
+  float:left;
 }
