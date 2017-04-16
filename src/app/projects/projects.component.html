@@ -1,0 +1,40 @@
+<span *ngIf="!project.details.length && !project.demoLink">
+	<h2 class="h4">{{project.projectNameShort || project.projectName}}</h2>
+</span>
+<span *ngIf="project.details.length">
+	<h2 class="h4 cursor-pointer" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]">
+		{{project.projectNameShort || project.projectName}}
+		<span *ngIf="showDetail['number'+I+'-'+i]">
+			<svg class="icon icon-expand_more">
+				<use xlink:href="#icon-expand_more"></use>
+			</svg>
+		</span>
+		<span *ngIf="!showDetail['number'+I+'-'+i]">
+			<svg class="icon icon-expand_less">
+				<use xlink:href="#icon-expand_less"></use>
+			</svg>
+		</span>
+	</h2>
+</span>
+<span *ngIf="project.demoLink">
+	<a [href]="project.demoLink" target="_blank">
+		<h2 class="h4 cursor-pointer" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]">
+			{{project.projectNameShort || project.projectName}}
+			<svg class="icon icon-open_in_new">
+				<use xlink:href="#icon-open_in_new"></use>
+			</svg>
+		</h2>
+	</a>
+</span>
+<p [ngClass]="{'cursor-pointer': project.details.length}" [innerHTML]="project.projectDescription" (click)="showDetail['number'+I+'-'+i] = !showDetail['number'+I+'-'+i]"></p>
+<span *ngIf="project.projectPublication">
+	<div class="float-left">
+		<svg class="icon icon-file-text-o">
+			<use xlink:href="#icon-file-text-o"></use>
+		</svg>
+	</div>
+	<a [href]="project.projectPublicationLink" target="_blank" [innerHTML]="project.projectPublication" class="ml-4 d-block"></a>
+</span>
+<ul *ngIf="showDetail['number'+I+'-'+i]">
+	<li *ngFor="let detail of project.details">{{detail}}</li>
+</ul>
