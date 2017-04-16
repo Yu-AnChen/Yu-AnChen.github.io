@@ -26,7 +26,7 @@
 				<div class="row pl-5">
 					<div class="col-12 text-left mt-5 h4 lh-3  mb-0 pl-5 border-left-solid" [ngClass]="job.skills ? 'pb-2' : 'pb-4'">
 						<img [src]="'assets/img/bullet_'+category+'.png'" class="bullet-img">
-						<div class="h6 mb-0">{{job.duration[0] | date:'MMM y'}} - {{job.duration[1] | date:'MMM y'}}</div>
+						<div class="h6 mb-0">{{job.duration[0]}} - {{job.duration[1]}}</div>
 						<span [innerHTML]="job.title"></span>
 					</div>
 					<p class="col-12 border-left-solid pl-5 mb-0 pb-2" *ngIf="job.skills">

@@ -4,7 +4,7 @@ const dataRaw = [
         summary: 'A dedicated, goal-oriented biomedical engineer with a background in nanomaterial engineering and molecular biology. Expertise in DNA-templated silver nanoclusters probe design, synthesis and application. Extensive experience in gene cloning, transcript expression analysis, recombinant protein expression, purification, and characterization through mutational analysis and functional assays. Excellent problem solving, communication, and multi-tasking skills.',
         jobs: [
             {
-                duration: [new Date('2014/02/01'), new Date(Date.now())],
+                duration: ['Feb 2014', 'Present'],
                 title: 'Visiting Scholar, University of Texas at Austin, Dr. Tim Yeh’s lab',
                 projects: [
                     {
@@ -59,7 +59,7 @@ const dataRaw = [
                 ]
             },
             {
-                duration: [new Date('2009/09/01'), new Date('2012/05/01')],
+                duration: ['Sep 2009', 'May 2012'],
                 title: 'Graduate Research Assistant, National Taiwan University, Dr. Hsu-Liang Hsieh’s Lab',
                 projects: [
                     {
@@ -91,7 +91,7 @@ const dataRaw = [
                 ]
             },
             {
-                duration: [new Date('2009/01/01'), new Date('2009/06/01')],
+                duration: ['Jan 2009', 'Jun 2009'],
                 title: 'Undergraduate Research Assistant, National Taiwan University, Dr. Hsu-Liang Hsieh’s Lab',
                 projects: [
                     {
@@ -111,7 +111,7 @@ const dataRaw = [
         category: 'code',
         jobs: [
             {
-                duration: [new Date('2015/12/01'), new Date()], 
+                duration: ['Dec 2015', 'Present'], 
                 title: 'Freelance Web Developer',
                 skills: ['Javascript', 'MongoDB', 'Express', 'Angular', 'NodeJS', 'Version control', 'Heroku'],
                 projects: [
@@ -147,7 +147,7 @@ const dataRaw = [
                 ],
             },
             {
-                duration: [new Date('2014/02/01'), new Date('2015/12/01')], 
+                duration: ['Feb 2014', 'Dec 2015'], 
                 title: 'TTBA Web Admin', 
                 skills: ['HTML', 'CSS', 'Google Sites', 'Google Analytics', 'Email Campaign', 'Facebook Campaign'],
                 projects: [
