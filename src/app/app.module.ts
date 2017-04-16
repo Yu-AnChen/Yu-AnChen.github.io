@@ -7,13 +7,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { ProfolioComponent } from './profolio/profolio.component';
 
-import { routing } from './app.routes'
+import { routing } from './app.routes';
+import { ContactLinksComponent } from './contact-links/contact-links.component';
+import { ProjectsComponent } from './projects/projects.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfolioComponent,
+    ContactLinksComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
