@@ -17,11 +17,38 @@
 		</div>
 
 		<section *ngIf="category">
-			<div class="row pl-5 pb-5">
+			<div class="row min-height-100vh">
 				<div class="col-12">
-					{{data[category].summary}}
+					<div class="title-img-position">
+						<span *ngIf="category == 'research'">
+							<svg class="icon icon-code icon-jumbo">
+								<use xlink:href="#icon-flask"></use>
+							</svg>
+						</span>
+						<span *ngIf="category == 'code'">
+							<svg class="icon icon-code icon-jumbo">
+								<use xlink:href="#icon-code"></use>
+							</svg>
+						</span>
+							<!--<use xlink:href="data[category.summaryIcon]"></use>-->
+					</div>
+					<div class="title-position">
+						{{data[category].summary}}
+					</div>
 				</div>
 			</div>
+			<!--<div class="row pb-5">
+				<div class="col-12 d-flex flex-row align-items-baseline">
+					<div>
+						<svg class="icon icon-code icon-jumbo">
+							<use xlink:href="#icon-code"></use>
+						</svg>
+					</div>
+					<div class="pl-2">
+						{{data[category].summary}}
+					</div>
+				</div>
+			</div>-->
 			<div *ngFor="let job of data[category].jobs; let I = index; let first = first">
 				<div class="row pl-5">
 					<div class="col-12 text-left mt-5 h4 lh-3  mb-0 pl-5 border-left-solid" [ngClass]="job.skills ? 'pb-2' : 'pb-4'">
@@ -39,7 +66,9 @@
 
 					<div class="col-12 bg-img pl-5" [ngStyle]="{'background-image': 'url(' + getImgUrl(project.projectImg) + ')'}">
 						<div class="col-12 text-on-bg-img d-flex flex-column justify-content-start pt-3 pl-5">
-							<span *ngIf="!project.details.length && !project.demoLink">
+							<app-projects [project]="project" [showDetail]="showDetail['number'+I+'-'+i]" (onShowDetailChange)="showDetail['number'+I+'-'+i] = $event">
+							</app-projects>
+							<!--<span *ngIf="!project.details.length && !project.demoLink">
 								<h2 class="h4">{{project.projectNameShort || project.projectName}}</h2>
 							</span>
 							<span *ngIf="project.details.length">
@@ -78,7 +107,7 @@
 							</span>
 							<ul *ngIf="showDetail['number'+I+'-'+i]">
 								<li *ngFor="let detail of project.details">{{detail}}</li>
-							</ul>
+							</ul>-->
 						</div>
 					</div>
 
@@ -86,7 +115,9 @@
 
 					<div class="col-12 pl-5">
 						<div class="col-12 text-on-bg-img d-flex flex-column justify-content-start pt-3 pl-5">
-							<span *ngIf="!project.details.length && !project.demoLink">
+							<app-projects [project]="project" [showDetail]="showDetail['number'+I+'-'+i]" (onShowDetailChange)="showDetail['number'+I+'-'+i] = $event">
+							</app-projects>
+							<!--<span *ngIf="!project.details.length && !project.demoLink">
 								<h2 class="h4">{{project.projectNameShort || project.projectName}}</h2>
 							</span>
 							<span *ngIf="project.details.length">
@@ -125,7 +156,7 @@
 							</span>
 							<ul *ngIf="showDetail['number'+I+'-'+i]">
 								<li *ngFor="let detail of project.details">{{detail}}</li>
-							</ul>
+							</ul>-->
 						</div>
 					</div>
 				</div>
