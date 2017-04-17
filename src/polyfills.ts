@@ -27,7 +27,7 @@ import 'zone.js/dist/zone';
 
 // Animations
 // Needed for: All but Chrome and Firefox, Not supported in IE9
-// import 'web-animations-js';
+import 'web-animations-js';
 
 // Date, currency, decimal and percent pipes
 // Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
@@ -35,4 +35,4 @@ import 'zone.js/dist/zone';
 
 // NgClass on SVG elements
 // Needed for: IE10, IE11
-// import 'classlist.js';
+import 'classlist.js';
