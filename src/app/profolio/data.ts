@@ -2,6 +2,7 @@ const dataRaw = [
     {
         category: 'research',
         summary: 'A dedicated, goal-oriented biomedical engineer with a background in nanomaterial engineering and molecular biology. Expertise in DNA-templated silver nanoclusters probe design, synthesis and application. Extensive experience in gene cloning, transcript expression analysis, recombinant protein expression, purification, and characterization through mutational analysis and functional assays. Excellent problem solving, communication, and multi-tasking skills.',
+        summaryIcon: '#icon-flask',
         jobs: [
             {
                 duration: ['Feb 2014', 'Present'],
@@ -109,6 +110,8 @@ const dataRaw = [
     },
     {
         category: 'code',
+        summary: 'Full-stack web developer specialized in building user-centered, dynamic applications and websites.  Expertise in all stages of the development cycle. Proficient JavaScript, HTML5, CSS3 programmer. Keen learner that embraces new technology and methodologies at high speed.',
+        summaryIcon: '#icon-code',
         jobs: [
             {
                 duration: ['Dec 2015', 'Present'], 
